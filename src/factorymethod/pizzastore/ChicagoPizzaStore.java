@@ -1,0 +1,17 @@
+package factorymethod.pizzastore;
+
+import factorymethod.pizza.ChicagoStyleCheesePizza;
+import factorymethod.pizza.Pizza;
+
+public class ChicagoPizzaStore extends PizzaStore {
+
+	@Override
+	protected Pizza createPizza(String type) {
+		
+		if (type.equals("cheese")) {
+			return new ChicagoStyleCheesePizza();
+		} else {
+			return null;
+		}
+	}
+}
