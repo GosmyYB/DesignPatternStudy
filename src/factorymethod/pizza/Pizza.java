@@ -6,25 +6,28 @@ package factorymethod.pizza;
 import java.util.ArrayList;
 import java.util.List;
 
+import factorymethod.pizzaingredient.Cheese;
+import factorymethod.pizzaingredient.Clams;
+import factorymethod.pizzaingredient.Dough;
+import factorymethod.pizzaingredient.Pepperoni;
+import factorymethod.pizzaingredient.Sauce;
+import factorymethod.pizzaingredient.Veggies;
+
 /**
  * @author wyb
  */
 public abstract class Pizza {
 	
 	String name;
-	String dough; //生面团
-	String sauce; //酱汁
-	List toppings = new ArrayList(); //配品
+	Dough dough; //生面团
+	Sauce sauce; //酱汁
+	Veggies veggies[];
+	Cheese cheese;
+	Pepperoni pepperoni;
+	Clams clam;
 	
-	public void prepare() {
-		System.out.println("Prparing " + name);
-		System.out.println("Tossing dough...");
-		System.out.println("Adding sauce...");
-		System.out.println("Adding toppings:");
-		for (int i = 0; i < toppings.size(); i++) {
-			System.out.println(" " + toppings.get(i));
-		}
-	}
+	public abstract void prepare();
+	
 	
 	public void bake() {
 		System.out.println("Bake for 25 minutes at 350");
@@ -38,7 +41,13 @@ public abstract class Pizza {
 		System.out.println("Place pizza in official PizzaStore box");
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getName() {
 		return name;
+	}
+	public String toString() {
+		return "Pizza";
 	}
 }
