@@ -5,7 +5,12 @@ package singleton;
  */
 public class StaticInnerClassSingleton {
 
+    private String name;
+    private int count;
+
     private StaticInnerClassSingleton() {
+        name = new String("instance");
+        count = 0;
         System.out.println("In constructor");
     }
     private static class SingletonHolder {
@@ -20,5 +25,21 @@ public class StaticInnerClassSingleton {
         StaticInnerClassSingleton instance = null;
         System.out.println("creating instance"); // prints before constructor
         instance = StaticInnerClassSingleton.getInstance();
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void add() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
     }
 }

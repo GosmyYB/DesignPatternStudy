@@ -1,8 +1,8 @@
 #Mac
 copy.sh
-/bin
+bin
 .idea
-DesignPatternStudy.iml
+*.iml
 
 #eclipse
 .classpath
@@ -11,4 +11,6 @@ DesignPatternStudy.iml
 .DS_Store
 
 #Windows
-bin
+
+reference
+
